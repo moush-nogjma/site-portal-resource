@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>介绍 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #fafafa;
+            color: #1e1e1e;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding: 3.5rem 1.5rem 5rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 层级标题 — 极简留白 */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            color: #111;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6b6b6b;
+            border-left: 3px solid #d4d4d4;
+            padding-left: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 2.8rem 0 0.9rem;
+            color: #222;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 0.975rem;
+        }
+
+        /* 特点列表 — 极简卡片式衬线 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            margin: 2rem 0 2.4rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+            transform: translateY(-1px);
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 520;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+            color: #0d0d0d;
+        }
+
+        .feature-item span {
+            display: block;
+            color: #4a4a4a;
+            font-size: 0.9rem;
+        }
+
+        /* 温和引用、提示 */
+        .inset-note {
+            background: #f4f4f5;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 2.2rem 0 1.8rem;
+            font-size: 0.92rem;
+            color: #2b2b2b;
+            border-left: 2px solid #c4c4c4;
+        }
+
+        .inset-note a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+        }
+
+        .inset-note a:hover {
+            color: #5b5b5b;
+        }
+
+        /* 普通链接嵌入 */
+        .inline-link {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            font-weight: 450;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #6a6a6a;
+        }
+
+        /* 底部 */
+        .closing {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e4e4e4;
+            font-size: 0.85rem;
+            color: #6f6f6f;
+            letter-spacing: 0.01em;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 520px) {
+            body {
+                padding: 2.2rem 1.2rem 4rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .feature-item {
+                padding: 1rem 1.1rem;
+            }
+            .inset-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场短句 -->
+    <h1>一个关于信息与信任的站点</h1>
+    <div class="subhead">聚合 · 体育 · 游戏 · 简洁呈现</div>
+
+    <!-- 承接段落 — 从站点介绍与可信说明切入 -->
+    <p>
+        从最初的信息筛选到如今稳定的内容聚合，<a href="https://news-sports-igame.com" class="inline-link">爱游戏</a>始终围绕一个内核：让关注体育与游戏的读者，能够在一个干净的界面内快速获得有依据的资讯。站点不追求冗余的装饰，也没有跳转干扰，而是将注意力放回信息本身。
+    </p>
+    <p>
+        作为长期维护的项目，其内容来源均经过基础筛选与核验，避免传播未经证实的消息。同时保持更新节奏，让每次浏览都能触及近期动态，而非陈旧的归档页。这种克制的运营方式，在一定程度上为频繁查阅的读者建立了稳定的预期。
+    </p>
+
+    <!-- 特点列表 — 差异化表述，信息密度稍高 -->
+    <h2>结构 · 可信 · 可读</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>分类归拢</strong>
+            <span>体育新闻与游戏资讯划分为独立板块，各自拥有清晰的标签体系，减少信息混杂带来的认知负荷。</span>
+        </div>
+        <div class="feature-item">
+            <strong>低噪界面</strong>
+            <span>无弹出式广告、无自动播放媒体、无隐藏追踪脚本。页面权重被均匀分配给内容而非视觉刺激。</span>
+        </div>
+        <div class="feature-item">
+            <strong>基线可信</strong>
+            <span>每一条内容均标注参考来源或原文链接，方便读者回溯印证。站点不生产虚假信息，也不转载匿名传闻。</span>
+        </div>
+        <div class="feature-item">
+            <strong>持续维护</strong>
+            <span>运营者定期清理无效链接与过时报道，保证聚合列表的时效性。数月未更新的板块会被标注并暂停推荐。</span>
+        </div>
+    </div>
+
+    <!-- 场景 / 提示段落 — 温和的读者引导 -->
+    <p>
+        无论是需要快速浏览当日赛事结果，还是了解近期游戏业界动态，这里都提供了一个无干扰的起点。没有注册门槛，不设阅读权限，打开页面即可获取结构化的信息流。对于希望减少信息噪音的用户而言，这是一种值得尝试的中介方式。
+    </p>
+
+    <!-- 嵌入链接的句子 — 自然嵌入，不使用入口等词 -->
+    <div class="inset-note">
+        ⚡ 如果你正在寻找一个信息梳理相对克制的体育与游戏聚合页，不妨将 <a href="https://news-sports-igame.com">爱游戏</a> 加入书签。它不会用推送打扰你，只在你主动打开时呈现经过筛选的内容。
+    </div>
+
+    <!-- 温和结尾 — FAQ 摘要风格，但更偏总结 -->
+    <h2>常见疑问简述</h2>
+    <p><strong>内容更新频率如何？</strong> 体育板块通常在赛事结束后数小时内更新；游戏板块保持每周 2–5 篇资讯。特殊时期（大型赛事、游戏展会）频率会临时提高。</p>
+    <p><strong>信息可靠性从何而来？</strong> 每篇文章均标注原始出处，并优先采用官方新闻稿、俱乐部公告、开发者日志等一手信源。转载内容会明确标注转载来源。</p>
+    <p><strong>能否订阅或接收推送？</strong> 目前站点仅提供纯网页浏览，不设邮件订阅或推送通知。这恰好符合部分读者“想看时再看”的使用习惯。</p>
+
+    <div class="closing">
+        页面内容于 2025 年更新 · 无隐藏跟踪 · 无商业推广
+    </div>
+</div>
+</body>
+</html>
