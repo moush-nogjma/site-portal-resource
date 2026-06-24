@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>爱游戏 · 资料整理与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fd;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #193b4a;
+      line-height: 1.6;
+      padding: 1.2rem 1rem 2rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #e5f3f0 0%, #d0e6e8 100%);
+      border-radius: 2rem;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 6px 16px rgba(34, 98, 106, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: -20px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, #44b5a0 0%, transparent 70%);
+      opacity: 0.15;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0f3843;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      color: #2f606e;
+      max-width: 680px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      padding: 0.5rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 480;
+      border: 1px solid #b5d6d4;
+      color: #1a4b58;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    /* 网格卡片 */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.4rem;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.4rem;
+      padding: 1.6rem 1.2rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(34, 86, 94, 0.06);
+      transition: transform 0.18s ease, box-shadow 0.2s;
+      border: 1px solid #e1f0ed;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(33, 99, 103, 0.09);
+    }
+
+    .card .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #d8eee9;
+      border-radius: 1rem;
+      margin-bottom: 0.7rem;
+      color: #1c5f6b;
+      font-size: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 540;
+      color: #11424f;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2b5a66;
+    }
+
+    /* 说明区 双栏 */
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.4rem 0 2rem;
+    }
+
+    .col {
+      flex: 1 1 280px;
+      background: #f3fbfa;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #cfe4e0;
+    }
+
+    .col h2 {
+      font-size: 1.4rem;
+      font-weight: 530;
+      color: #104450;
+      margin-bottom: 0.8rem;
+      border-left: 5px solid #3baa95;
+      padding-left: 0.8rem;
+    }
+
+    .col ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .col li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .col li::before {
+      content: "▹";
+      color: #3a9e8c;
+      font-weight: 500;
+      position: absolute;
+      left: 0;
+    }
+
+    .col p {
+      margin-bottom: 0.8rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: white;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.8rem 1.2rem;
+      margin: 2rem 0 2.2rem;
+      border: 1px solid #d2e7e3;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 520;
+      color: #144d5b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px dashed #d1e2de;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #1c4f5d;
+    }
+
+    .faq-a {
+      color: #346a77;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid #c7ddd8;
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #2b5764;
+    }
+
+    .footer-links a {
+      color: #1a6c6a;
+      text-decoration: none;
+      font-weight: 470;
+      border-bottom: 1px dotted #8bbfb5;
+      transition: border-color 0.2s;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #1a7b72;
+    }
+
+    .footer-note {
+      color: #416f7a;
+    }
+
+    .footer-note span {
+      background: #d4ece5;
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+
+    .inline-link {
+      color: #14665e;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 1px solid #71b6aa;
+      transition: background 0.15s;
+    }
+
+    .inline-link:hover {
+      background: #c7e7df;
+    }
+
+    /* responsive */
+    @media (max-width: 540px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      .grid-3 {
+        gap: 1rem;
+      }
+      .two-col {
+        gap: 1.2rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero .sub {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1.2rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>爱游戏 · 信息索引</h1>
+    <div class="sub">从赛事资料到内容整理，为关注游戏与体育的朋友搭建温和的参考路径。</div>
+    <div class="tagline">📋 资料归类 · 动态摘要 · 索引思路</div>
+  </div>
+
+  <!-- 优势区: 网格卡片 -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="icon">📁</div>
+      <h3>分类归档</h3>
+      <p>围绕热点赛事与游戏更新，整理可溯源的资讯条目，方便按兴趣浏览。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h3>轻量索引</h3>
+      <p>避免信息过载，采用卡片式阅读，每则摘要都保留原始出处。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h3>场景适配</h3>
+      <p>移动端优先设计，无论通勤、小憩还是专注查阅，都能快速定位内容。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：双栏布局（资料整理 + 索引角度） -->
+  <div class="two-col">
+    <div class="col">
+      <h2>资料整理逻辑</h2>
+      <ul>
+        <li>按赛事时间线、游戏版本节点聚合相关报道与数据。</li>
+        <li>提炼关键信息，去除重复与模糊表述，保留事实。</li>
+        <li>支持跨平台收藏与二次搜索，为深度兴趣提供起点。</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>索引使用建议</h2>
+      <p>推荐将 <a href="https://news-sport-igame.com" class="inline-link">爱游戏</a> 作为常规的信息锚点，每次访问都能看到整理后的条目。你可以把这里当作一个带有注释的书签集合，而不是新闻流。</p>
+      <p style="margin-top: 0.8rem;">索引本身不产生碎片化推送，更侧重内容的结构化与留存价值。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>📌 常见疑问摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">Q：这里的资料更新频率如何？</div>
+      <div class="faq-a">A：主要跟随大型赛事与重要游戏版本进行阶段性整理，不定期补充背景信息。不追求每日更新，更在意内容质量与条目可用性。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：是否包含个人观点或深度分析？</div>
+      <div class="faq-a">A：大部分为资料索引与客观摘要，偶尔附有简短的整理备注，不构成投资建议或专业指导。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：移动端体验有特别设计吗？</div>
+      <div class="faq-a">A：是的，卡片与文字间距均针对小屏优化，且无需横向滚动。你可以直接在浏览器中添加至主屏幕，方便随时翻阅。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <div class="footer-note">
+      <span>内容索引</span> · 保持温和与清晰
+    </div>
+    <div>
+      更多资料：<a href="https://news-sport-igame.com">爱游戏</a>
+    </div>
+    <div style="font-size: 0.85rem; color: #527e88;">
+      基于公开信息整理 · 仅供个人参考
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
